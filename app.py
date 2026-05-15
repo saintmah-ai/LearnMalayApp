@@ -77,7 +77,9 @@ with col1:
                 genai.configure(api_key=api_key)
                 
                 system_prompt = "Kamu adalah guru bahasa Mandarin. Balas menggunakan bahasa Indonesia dan Mandarin (dengan Pinyin). Jawablah dengan singkat, ramah, dan natural."
-                model = genai.GenerativeModel("gemini-1.5-flash")
+                
+                # MENGGUNAKAN MODEL GEMINI-PRO (Model yang paling dasar dan stabil)
+                model = genai.GenerativeModel("gemini-pro")
                 
                 gemini_messages = [{"role": "user", "parts": [system_prompt]}]
                 
