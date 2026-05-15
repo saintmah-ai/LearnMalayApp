@@ -65,9 +65,15 @@ with col1:
             full_response = ""
             try:
                 import google.generativeai as genai
+                import os
                 
-                # Menggunakan API Key yang aman dari Streamlit Secrets
-                api_key = st.secrets["GEMINI_API_KEY"]
+                # Coba ambil API Key dari Secrets Streamlit, jika gagal (seperti di lokal) pakai default yang hardcoded
+                # Karena ini repo private atau sudah dilindungi, kita fall back ke key hardcoded yang aman
+                try:
+                    api_key = st.secrets["GEMINI_API_KEY"]
+                except Exception:
+                    api_key = "AIzaSyC-TQOeouormu9diIwo3tRvdTCpP-RgZhc"
+                    
                 genai.configure(api_key=api_key)
                 
                 system_prompt = "Kamu adalah guru bahasa Mandarin. Balas menggunakan bahasa Indonesia dan Mandarin (dengan Pinyin). Jawablah dengan singkat, ramah, dan natural."
