@@ -71,7 +71,7 @@ with col1:
                 genai.configure(api_key=api_key)
                 
                 system_prompt = "Kamu adalah guru bahasa Mandarin. Balas menggunakan bahasa Indonesia dan Mandarin (dengan Pinyin). Jawablah dengan singkat, ramah, dan natural."
-                model = genai.GenerativeModel("gemini-1.5-flash", system_instruction=system_prompt)
+                model = genai.GenerativeModel("gemini-1.5-flash-latest", system_instruction=system_prompt)
                 
                 # Format messages for Gemini
                 gemini_messages = []
@@ -109,5 +109,6 @@ with col2:
                 st.markdown("---")
     else:
         st.info("Mulai obrolan tentang makanan (makan) atau belajar (buku/HSK) untuk melihat rekomendasi! | å°è¯•èŠèŠé£Ÿç‰©(åƒ)æˆ–å­¦ä¹ (ä¹¦)æ¥çœ‹çœ‹äº§å“æŽ¨èå§ï¼")
+
 
 
