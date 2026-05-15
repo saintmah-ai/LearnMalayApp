@@ -1,2 +1,2 @@
-# LearnMalayApp
-Learning Indonesia Malay from Openclaw
+streamlit
+google-generativeai
